@@ -19,7 +19,6 @@ function setup() {
 }
 
 function draw() {
-  // you don't need to make any adjustments inside the draw loop
   background(0);
   drawFloor(); // for reference only
 
