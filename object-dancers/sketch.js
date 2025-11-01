@@ -13,11 +13,8 @@
 let dancer;
 
 function setup() {
-  // no adjustments in the setup function needed...
   let canvas = createCanvas(windowWidth, windowHeight);
   canvas.parent("p5-canvas-container");
-
-  // ...except to adjust the dancer's name on the next line:
   dancer = new Tapper(width / 2, height / 2);
 }
 
@@ -40,8 +37,6 @@ class Tapper {
   }
 
   update() {
-    // update properties here to achieve
-    // your dancer's desired moves and behaviour
     this.t += 0.05;
     this.hipSwing = sin(this.t) * 8; //side movement
     this.legSwing = sin(this.t) * 12; // leg swing
@@ -69,14 +64,14 @@ display() {
   let armLength = 30;
   let armAngle = this.armSwing;
 
-  // left arm
+  // left arm draws arm based off there the shoulder y level should be and rotates it 
   push();
   translate(-10, shoulderY);
   rotate(armAngle);
   line(0, 0, -armLength, 0);
   pop();
 
-  // right arm
+  // right arm draws arm based off there the shoulder y level should be and rotates it 
   push();
   translate(10, shoulderY);
   rotate(armAngle);
@@ -85,12 +80,12 @@ display() {
 
   pop();
 
-  // hips and legs
+  // creates main hip point where the legs and hips will swing
   push();
   translate(this.hipSwing, 0);
   ellipse(0, 0, 10);
 
-  // legs swing
+  // legs swing, just two lines going opposite directions just like the arms 
   let legMovement = this.legSwing;
   line(0, 0, -25 + legMovement, 40);
   line(0, 0, 25 + legMovement, 40);
