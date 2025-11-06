@@ -90,22 +90,10 @@ display() {
   line(0, 0, 25 + legMovement, 40);
   pop();
 
-  // reference box and cross
-  this.drawReferenceShapes();
 
   pop();
 }
 
-  drawReferenceShapes() {
-    noFill();
-    stroke(255, 0, 0);
-    line(-5, 0, 5, 0);
-    line(0, -5, 0, 5);
-    stroke(255);
-    rect(-100, -100, 200, 200);
-    fill(255);
-    stroke(0);
-  }
 }
 
 
